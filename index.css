@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+:root {
+  --primary-color: #bc5b57;
+}
+
 .container {
   height: 100vh;
   background-color: lavender;
@@ -15,11 +19,10 @@ body {
 .sidebar {
   grid-column: 1/2;
   grid-row: 1/6;
-  background-color: #1992d4;
+  background-color: var(--primary-color);
   color: white;
-  padding: 16px;
+  padding: 20px 80px 20px 20px;
   box-sizing: border-box;
-
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -28,8 +31,7 @@ body {
 .sidebar .sidebar-header {
   display: grid;
   grid-auto-flow: column;
-  gap: 8px;
-  grid-template-columns: 40px auto;
+  gap: 12px;
 
   > * {
     align-self: center;
@@ -37,7 +39,7 @@ body {
   }
 
   span {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -45,11 +47,12 @@ body {
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 40px auto;
-  padding: 12px 0;
+  padding: 12px;
+  gap: 24px;
 
   span:first-of-type {
     text-align: center;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
   }
 
   > * {
@@ -59,7 +62,7 @@ body {
   a {
     text-decoration: none;
     color: inherit;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
 
@@ -71,14 +74,16 @@ body {
 .header {
   grid-column: 2/3;
   background-color: aliceblue;
-  padding: 16px 32px;
+  padding: 24px 64px 24px 48px;
   display: grid;
-  box-sizing: border-box;
+  row-gap: 20px;
+  box-shadow: 8px -8px 4px 6px black;
 
   > * {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 2fr 1fr;
+    grid-row: 1fr 1fr;
   }
 
   .search-input {
@@ -91,13 +96,13 @@ body {
     }
 
     input {
-      border-radius: 16px;
+      border-radius: 20px;
       outline: none;
       border: none;
       background-color: #e2e8f0;
       font-size: 16px;
-      height: 32px;
-      width: 90%;
+      height: 40px;
+      padding: 0 24px;
     }
   }
 
@@ -105,7 +110,7 @@ body {
     display: flex;
     gap: 24px;
     grid-auto-flow: column;
-    justify-content: center;
+    justify-content: end;
 
     > * {
       align-self: center;
@@ -113,12 +118,63 @@ body {
 
     .profile-picture {
       height: 54px;
-      border-radius: 50%;
     }
 
     .profile-username {
       font-weight: bold;
       font-size: 1.25rem;
+    }
+  }
+
+  .user-details {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-row: repeat(3, 1fr);
+    column-gap: 16px;
+  }
+
+  .user-details .profile-picture {
+    grid-column: 1/2;
+    grid-row: 1/4;
+  }
+
+  .user-details .greeting {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-weight: bold;
+    align-self: flex-end;
+  }
+
+  .user-details .username {
+    grid-column: 2/3;
+    grid-row: 2/4;
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: flex-start;
+  }
+
+  .header-actions {
+    display: grid;
+    align-self: center;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    gap: 24px;
+    grid-template-columns: repeat(3, 120px);
+
+    button {
+      background-color: var(--primary-color);
+      font-size: 1rem;
+      color: white;
+      font-weight: 600;
+      padding: 16px 24px;
+      border-radius: 32px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.8;
     }
   }
 }
