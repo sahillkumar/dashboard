@@ -9,8 +9,8 @@ body {
 }
 
 .container {
-  height: 100vh;
-  background-color: lavender;
+  height: 100%;
+  background-color: #e2e8f0;
   display: grid;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: repeat(5, 1fr);
@@ -73,11 +73,11 @@ body {
 
 .header {
   grid-column: 2/3;
-  background-color: aliceblue;
   padding: 24px 64px 24px 48px;
   display: grid;
   row-gap: 20px;
   box-shadow: 8px -8px 4px 6px black;
+  background-color: #fff;
 
   > * {
     display: grid;
@@ -182,4 +182,71 @@ body {
 .content {
   grid-column: 2/3;
   grid-row: 2/6;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 20px 40px 20px 20px;
+  gap: 20px;
+  border: 1px solid red;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.misc-content {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.card {
+  background-color: white;
+  padding: 32px;
+  border-radius: 8px;
+  display: grid;
+  align-content: space-between;
+  min-height: 180px;
+}
+
+.card.project-card {
+  border-left: 8px solid var(--primary-color);
+  .card-footer {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    gap: 32px;
+  }
+
+  .footer-action {
+    width: 24px;
+  }
+}
+
+.card.misc-card {
+  .card-body {
+    display: grid;
+    gap: 24px;
+  }
+
+  .trending-item {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 54px auto;
+    align-items: center;
+    gap: 16px;
+
+    b {
+      color: black;
+    }
+
+    .avatar {
+      height: 54px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
 }
