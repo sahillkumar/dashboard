@@ -186,7 +186,6 @@ body {
   grid-template-columns: 3fr 1fr;
   padding: 20px 40px 20px 20px;
   gap: 20px;
-  border: 1px solid red;
 }
 
 .projects {
@@ -220,6 +219,11 @@ body {
 
   .footer-action {
     width: 24px;
+    cursor: pointer;
+  }
+
+  > .card-body > div {
+    color: #7a7a7a;
   }
 }
 
@@ -247,6 +251,12 @@ body {
         height: 100%;
         width: 100%;
       }
+    }
+  }
+
+  .announcement-item {
+    > div {
+      color: #7a7a7a;
     }
   }
 }
